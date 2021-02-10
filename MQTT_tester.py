@@ -132,7 +132,7 @@ def run_mqtt_producer():
             payload = lah_payloads[i % 2]
             mqtt_client.publish(TOPIC, json.dumps(payload), qos=1)
             if (i % 500) == 0:
-                print(f"{i} effects send in {time.time() - start} seconds!")
+                print(f"{i} effects send in {round(time.time() - start)} seconds!")
             time.sleep(SLEEP_TIME)
     except KeyboardInterrupt:
         pass
